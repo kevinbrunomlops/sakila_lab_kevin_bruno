@@ -1,39 +1,24 @@
-# EDA sakila
+---
+title: Welcome to my first Evidence EDA analyses
+---
 
-Full film data here:
-
-```sql films
-from sakila.film
-```
-
-```sql orders
-from needful_things.orders;
-```
-
-Picks out all the films with actors and title with rating G
-```sql film_actor
-from sakila.film_actors
-where rating = 'G';
-```
-
-## Number of films in each rating
+## Top 5 customers
 
 Data
 
-```sql number_films_by_rating
-select
-    rating,
-    count(film_id) as total_films
-from film
-group by rating
-order by rating
+```sql top_5_customers
+select 
+        customer, 
+        sum(amount) as total_spend
+from sakila.rental_customer 
+group by customer
+order by total_spend desc
+limit 5;
 ```
 
 <BarChart
-    data={number_films_by_rating}
-    title="Number of films per rating"
-    x=rating
-    y=total_films 
-    xAxisTitle="rating"
-    yAxisTitle="nr of movies" 
+    data={top_5_customers}
+    title="Top 5 customers"
+    x=customer
+    y=total_spend
 />
