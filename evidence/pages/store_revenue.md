@@ -17,5 +17,7 @@ order by total_revenue_in_usd desc
     title="Store revenue"
     x=store_id
     y=total_revenue_in_usd
+    yAxisTitle=" Revenue "
+    xAxisTitle="Stores"
     series=store_id
 />

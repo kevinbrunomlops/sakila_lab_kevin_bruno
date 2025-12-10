@@ -14,6 +14,8 @@ order by total_revenue desc
     data={revenue_per_category}
     x=category
     y=total_revenue
+    yAxisTitle=" Revenue "
+    xAxisTitle="Category"
     swapXY=true
     yFmt=usd0k
 />

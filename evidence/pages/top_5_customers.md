@@ -19,5 +19,7 @@ limit 5;
     title="Top 5 customers"
     x=customer
     y=total_spend_in_usd
+    yAxisTitle="Total amount spent"
+    xAxisTitle="Name of client"
 />
 
